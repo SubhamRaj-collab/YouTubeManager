@@ -25,11 +25,13 @@ def add_video(name, time):
     cursor.execute("INSERT into videos (name, time) VALUES (?, ?)", (name, time))
     con.commit()
 
-def update_video(name, time, video_id):
-    pass
+def update_video(new_name, time, video_id):
+    cursor.execute("UPDATE videos SET name = ?, time = ? WHERE id = ?", (new_name, time, video_id)) # As the details are in tuple, so we are taking the values also in tuple
+    con.commit()
 
 def delete_video(video_id):
-    pass
+    cursor.execute("Delete from videos WHERE id = ?", (video_id,)) #We cannot write as just (video_id) because it is not considered as tuple. To make it tuple we add a comma if only one value is provided.
+    con.commit()
 
 def main():
     
