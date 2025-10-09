@@ -1,3 +1,5 @@
+# Using sqlitedb to store the youtube videos data
+
 import sqlite3
 
 con = sqlite3.connect('yt_vds.db')
