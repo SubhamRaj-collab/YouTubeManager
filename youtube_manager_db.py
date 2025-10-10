@@ -68,6 +68,7 @@ def main():
                 delete_video(video_id)
 
             case 5:
+                print("Exiting the app...")
                 break
 
             case _:
